@@ -14,11 +14,11 @@ const Header = () => {
     ]
 
     return (
-        <div >
+        <div className=''>
            <Navbar
       fluid
       rounded
-      className=' bg-fuchsia-700 rounded-none basic'
+      className='rounded-none basic '
       
     >
       <Navbar.Brand to="/">
@@ -27,7 +27,7 @@ const Header = () => {
           className="mr-3 h-6 sm:h-9"
           src="/favicon.svg"
         /> */}
-        <span className="self-center whitespace-nowrap text-xl font-semibold text-white">
+        <span className="self-center text-xl font-semibold text-white">
           Isu`s` Food Review`
         </span>
       </Navbar.Brand>

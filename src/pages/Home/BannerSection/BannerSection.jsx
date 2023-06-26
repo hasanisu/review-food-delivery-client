@@ -7,27 +7,25 @@ const BannerSection = () => {
             <section class="mx-auto max-w-screen-2xl px-4 md:px-8">
                 <div class="mb-8 flex flex-wrap justify-between md:mb-16">
                     <div class="mb-6 flex w-full flex-col justify-center sm:mb-12 lg:mb-0 lg:w-1/3 lg:pt-48 lg:pb-24">
-                        <h1 class="text-black-800 mb-4 text-4xl font-bold sm:text-5xl md:mb-8 md:text-5xl">Welcome To <br />My Food Review Site</h1>
+                        <h1 class="text-black-800 mb-4 text-4xl font-bold sm:text-5xl md:mb-8 md:text-5xl font-serif">Welcome To <br />Isu`s Food Review Page</h1>
 
                         <p class="max-w-md leading-relaxed text-base xl:text-lg">This is a section of some simple filler text, also known as placeholder text. It shares characteristics of real text.</p>
                     </div>
 
-                    <div class="mb-12 flex w-full md:mb-16 lg:w-2/3">
-                        <div class="relative top-12 left-12 z-10 -ml-12 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:top-16 md:left-16 lg:ml-0 hover:-translate-y-12 duration-300 basic-border">
-                            <img src="https://images.unsplash.com/photo-1542340916-951bb72c8f74?auto=format&q=75&fit=crop&w=550&h=550" loading="lazy" alt="Photo by Kaung Htet" class="h-full w-full object-cover object-center" />
+                    <div class="mb-12 flex w-full md:mb-16 lg:w-2/3" >
+                        <div class="relative top-12 left-12 z-10 -ml-12 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:top-16 md:left-16 lg:ml-0 hover:-translate-y-12 duration-300 basic-border" data-aos="fade-left" >
+                            <img src="https://i.ibb.co/cJWQnSV/Online-Shoping-29-1024x819.jpg" loading="lazy" alt="Photo by Kaung Htet" class="h-full w-full object-cover object-center" />
                         </div>
 
-                        <div class="overflow-hidden rounded-lg bg-gray-100 shadow-lg hover:translate-y-10 duration-300 basic-border">
-                            <img src="https://images.unsplash.com/photo-1586295166487-b265f7e83a7f?auto=format&q=75&fit=crop&w=550&h=550" loading="lazy" alt="Photo by Manny Moreno" class="h-full w-full object-cover object-center" />
+                        <div class="overflow-hidden rounded-lg bg-gray-100 shadow-lg hover:translate-y-10 duration-300 basic-border" data-aos="fade-right" data-aos-duration="1000">
+                            <img src="https://i.ibb.co/MBW6c4S/a-comprehensive-review-of-the-alkaline-diet-alt-1440x810.jpg" loading="lazy" alt="Photo by Manny Moreno" class="h-full w-full object-cover object-center" />
                         </div>
                     </div>
                 </div>
 
                 <div class="flex flex-col items-center justify-between gap-8 md:flex-row">
-                    <div class="flex h-12 w-64 divide-x overflow-hidden rounded-lg border">
-                        <a href="#" class="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-200">Men</a>
-                        <a href="#" class="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-200">Women</a>
-                        <a href="#" class="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-200">Teens</a>
+                    <div>
+
                     </div>
 
 
@@ -55,8 +53,10 @@ const BannerSection = () => {
                             </a>
                         </div>
                     </div>
+                   
 
                 </div>
+                <hr  className='mt-10 border-purple-900 w-8/12 mx-auto'/>
             </section>
         </div>
     );

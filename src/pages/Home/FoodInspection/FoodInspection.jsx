@@ -2,12 +2,13 @@ import React from 'react';
 
 const FoodInspection = () => {
     return (
-        <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+        <div className="px-4 py-16 mx-auto w-10/12 md:px-24 lg:px-8 lg:py-20">
+            <hr className='mt-10 border-purple-900 w-5/12 mx-auto'/><br />
+            <p className='text-center text-lg font-semibold tracking-wider text-white uppercase'>Food Safety Inspection</p>
+            <hr className='mt-10 border-purple-900 w-5/12 mx-auto mb-20'/>
             <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
                 <div>
-                    <p className="inline-block px-3 py-px mb-4 text-lgfont-semibold tracking-wider text-white uppercase rounded-full bg-teal-accent-400">
-                        Food Safety Inspection
-                    </p>
+                    
                 </div>
                 <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
                     <span className="relative inline-block">
@@ -44,7 +45,7 @@ const FoodInspection = () => {
                 </p>
             </div>
             <div className="grid gap-8 row-gap-5 mb-8 md:row-gap-8 lg:grid-cols-4 sm:grid-cols-2">
-                <div className="duration-300 transform bg-white border-l-4 border-purple-600 hover:-translate-y-2">
+                <div data-aos="zoom-out-down" data-aos-duration="1000" className="duration-300 transform bg-white border-l-4 border-purple-600 hover:-translate-y-2">
                     <div className="h-full p-5 border border-l-0 rounded-r shadow-sm">
                         <h6 className="mb-2 font-semibold leading-5">Cleanliness and Hygiene</h6>
                         <p className="text-sm text-gray-900">
@@ -54,7 +55,7 @@ const FoodInspection = () => {
                         </p>
                     </div>
                 </div>
-                <div className="duration-300 transform bg-white border-l-4 border-purple-600 hover:-translate-y-2">
+                <div data-aos="zoom-out-right" data-aos-duration="1000" className="duration-300 transform bg-white border-l-4 border-purple-600 hover:-translate-y-2">
                     <div className="h-full p-5 border border-l-0 rounded-r shadow-sm">
                         <h6 className="mb-2 font-semibold leading-5">Separation between Raw and Cooked Ingredients</h6>
                         <p className="text-sm text-gray-900">
@@ -64,7 +65,7 @@ const FoodInspection = () => {
                         </p>
                     </div>
                 </div>
-                <div className="duration-300 transform bg-white border-l-4 border-purple-600 hover:-translate-y-2">
+                <div data-aos="zoom-out-left" data-aos-duration="1000" className="duration-300 transform bg-white border-l-4 border-purple-600 hover:-translate-y-2">
                     <div className="h-full p-5 border border-l-0 rounded-r shadow-sm">
                         <h6 className="mb-2 font-semibold leading-5">
                         Thorough Cooking
@@ -76,7 +77,7 @@ const FoodInspection = () => {
                         </p>
                     </div>
                 </div>
-                <div className="duration-300 transform bg-white border-l-4 border-purple-600 hover:-translate-y-2">
+                <div data-aos="zoom-in-right" data-aos-duration="1000" className="duration-300 transform bg-white border-l-4 border-purple-600 hover:-translate-y-2">
                     <div className="h-full p-5 border border-l-0 rounded-r shadow-sm">
                         <h6 className="mb-2 font-semibold leading-5">Keeping Food at Safe Temperatures</h6>
                         <p className="text-sm text-gray-900">
@@ -87,7 +88,7 @@ const FoodInspection = () => {
                         </p>
                     </div>
                 </div>
-                <div className="duration-300 transform bg-white border-l-4 border-purple-600 hover:-translate-y-2">
+                <div data-aos="zoom-in-down" data-aos-duration="1000" className="duration-300 transform bg-white border-l-4 border-purple-600 hover:-translate-y-2">
                     <div className="h-full p-5 border border-l-0 rounded-r shadow-sm">
                         <h6 className="mb-2 font-semibold leading-5">Using Raw Ingredients and Water Safely</h6>
                         <p className="text-sm text-gray-900">

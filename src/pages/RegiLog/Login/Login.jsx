@@ -4,8 +4,8 @@ import {Link} from 'react-router-dom';
 
 const Login = () => {
   return (
-    <div className="grid grid-cols-1 mt-10 mb-10 lg:grid-cols-12 lg:w-7/12 bg-gray-600 mx-auto p-10 rounded-lg basic-border">
-      <div className="lg:col-span-5 hidden lg:block">
+    <div className="grid grid-cols-1 mt-10 mb-10 lg:grid-cols-12 lg:w-7/12 bg-gray-600 mx-auto p-10 rounded-lg basic-border" >
+      <div className="lg:col-span-5 hidden lg:block" data-aos="fade-down" data-aos-duration="1000">
         <Player
           autoplay
           loop
@@ -19,7 +19,7 @@ const Login = () => {
       
       
 
-      <div className="w-78 lg:w-80 p-4 rounded-md shadow sm:p-8 bg-gray-900 content-center text-gray-100 lg:col-span-7">
+      <div className="w-78 lg:w-80 p-4 rounded-md shadow sm:p-8 bg-gray-900 content-center text-gray-100 lg:col-span-7" data-aos="fade-left" data-aos-offset="500" data-aos-duration="1000">
         <h2 className="mb-3 text-3xl font-semibold text-center">
           Login to your account
         </h2>

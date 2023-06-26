@@ -4,8 +4,8 @@ import {Link} from 'react-router-dom';
 const Register = () => {
     return (
         
-  <div className="mx-auto lg:py-20 bg-gray-600 lg:w-7/12 mt-10 mb-10 p-10 rounded-lg basic-border">
-    <div className="justify-center mx-auto text-left align-bottom transition-all transform bg-gray-400 rounded-lg sm:align-middle sm:max-w-2xl sm:w-full">
+  <div className="mx-auto lg:py-20 bg-gray-600 lg:w-7/12 mt-20 mb-24 p-10 rounded-lg basic-border">
+    <div className="justify-center mx-auto text-left align-bottom transition-all transform bg-gray-400 rounded-lg sm:align-middle sm:max-w-2xl sm:w-full" data-aos="fade-up" data-aos-duration="1000" >
       <div className="grid flex-wrap items-center justify-center grid-cols-1 mx-auto shadow-xl lg:grid-cols-2 rounded-xl  ">
         <div className="w-full px-6 py-3">
           <div>
