@@ -28,6 +28,12 @@
   color: #61dafb;
 }
 
+
+.food-pop{
+  height: 700px;
+  border-radius: 25px 0;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

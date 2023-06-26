@@ -1,6 +1,7 @@
 import React from 'react';
 import { Avatar, Dropdown, Navbar } from 'flowbite-react';
 import { Link, NavLink } from 'react-router-dom';
+import './Header.css'
 
 const Header = () => {
 
@@ -17,7 +18,8 @@ const Header = () => {
            <Navbar
       fluid
       rounded
-      className=' bg-yellow-400 rounded-none'
+      className=' bg-fuchsia-700 rounded-none basic'
+      
     >
       <Navbar.Brand to="/">
         {/* <img
@@ -25,8 +27,8 @@ const Header = () => {
           className="mr-3 h-6 sm:h-9"
           src="/favicon.svg"
         /> */}
-        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-          Flowbite React
+        <span className="self-center whitespace-nowrap text-xl font-semibold text-white">
+          Isu`s` Food Review`
         </span>
       </Navbar.Brand>
       <div className="flex md:order-2">
@@ -66,7 +68,7 @@ const Header = () => {
                 className={({isActive}) => {
                    return 'text-xl px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-400 no-underline' + 
                    (isActive ? 'text-gray-300 bg-gray-400 hover:text-blue-800' :
-                      ' text-blue-800'  
+                      ' text-blue-300'  
                    )
                 }}
                 >
