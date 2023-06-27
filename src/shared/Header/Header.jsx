@@ -10,11 +10,11 @@ const Header = () => {
         {id:'2', name: 'Login', href:'/login'},
         {id:'3', name: 'Register', href:'/register'},
         {id:'4', name: 'Create-product', href:'/hi'},
-        {id:'5', name: 'About', href:'/by'},
+        {id:'5', name: 'Contact', href:'/contact'},
     ]
 
     return (
-        <div className=''>
+        <div className=' sticky top-0'>
            <Navbar
       fluid
       rounded
@@ -46,12 +46,6 @@ const Header = () => {
           </Dropdown.Header>
           <Dropdown.Item>
           <Link to='/admin'>Dashboard</Link>
-          </Dropdown.Item>
-          <Dropdown.Item>
-            Settings
-          </Dropdown.Item>
-          <Dropdown.Item>
-            Earnings
           </Dropdown.Item>
           <Dropdown.Divider />
           <Dropdown.Item>

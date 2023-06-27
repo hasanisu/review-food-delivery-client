@@ -2,7 +2,8 @@
     background-color:rgb(93, 35, 150);
 }
 .basic-border{
-    border: 2px solid  rgb(93, 35, 150);
+    border: 1px solid  rgb(93, 35, 150);
+    
 }
 .basic-text{
     color:rgb(93, 35, 150) ;

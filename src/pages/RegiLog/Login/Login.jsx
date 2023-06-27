@@ -1,25 +1,20 @@
 import React from "react";
-import { Player} from "@lottiefiles/react-lottie-player";
+import { Player, Controls } from "@lottiefiles/react-lottie-player";
 import {Link} from 'react-router-dom';
+
 
 const Login = () => {
   return (
-    <div className="grid grid-cols-1 mt-10 mb-10 lg:grid-cols-12 lg:w-7/12 bg-gray-600 mx-auto p-10 rounded-lg basic-border" >
-      <div className="lg:col-span-5 hidden lg:block" data-aos="fade-down" data-aos-duration="1000">
-        <Player
-          autoplay
-          loop
-          src="login-smart.json"
-            style={{ height: '400px'}}
-          className="w-96"
-        ></Player>
+    <div className="grid grid-cols-1 mt-10 mb-10 lg:grid-cols-12 lg:w-7/12 form-bg mx-auto p-10 rounded-lg basic-border shadow-2xl" >
+      <div className="lg:col-span-5 hidden lg:block">
+      
         <p className="text-center text-lg text-slate-200">Don`t have account? <br /><Link className="underline text-red-200 hover:text-red-600" to='/register'>Register here</Link></p>
         <hr class="mx-auto my-8 h-1 w-60 border-0 basic" />
       </div>
       
       
 
-      <div className="w-78 lg:w-80 p-4 rounded-md shadow sm:p-8 bg-gray-900 content-center text-gray-100 lg:col-span-7" data-aos="fade-left" data-aos-offset="500" data-aos-duration="1000">
+      <div className="w-78 lg:w-80 p-4 rounded-md shadow sm:p-8 bg-gray-500 content-center text-gray-100 lg:col-span-7" >
         <h2 className="mb-3 text-3xl font-semibold text-center">
           Login to your account
         </h2>
@@ -71,7 +66,7 @@ const Login = () => {
                 name="email"
                 id="email"
                 placeholder="leroy@jenkins.com"
-                className="block w-full px-5 py-3 text-base text-neutral-600 placeholder-gray-500 transition duration-500 ease-in-out transform border border-transparent rounded-lg bg-cyan-100 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300" placeholder="Enter your password"/>
+                className="block w-full px-5 py-3 text-base text-neutral-600 placeholder-gray-500 transition duration-500 ease-in-out  border border-transparent rounded-lg bg-cyan-100 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300" placeholder="Enter your password"/>
               
             </div>
             <div className="space-y-2">
@@ -92,18 +87,19 @@ const Login = () => {
                 name="password"
                 id="password"
                 placeholder="*****"
-                className="block w-full px-5 py-3 text-base text-neutral-600 placeholder-gray-500 transition duration-500 ease-in-out transform border border-transparent rounded-lg bg-cyan-100 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300" placeholder="Enter your password"/>
+                className="block w-full px-5 py-3 text-base text-neutral-600 placeholder-gray-500 transition duration-500 ease-in-out  border border-transparent rounded-lg bg-cyan-100 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300" placeholder="Enter your password"/>
               
             </div>
           </div>
           <button
             type="button"
-            className="w-full w-full px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform basic  rounded-xl hover:bg-gray-500"
+            className="w-full w-full px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out  basic  rounded-xl hover:bg-gray-500"
           >
             Sign in
           </button>
         </form>
       </div>
+      
     </div>
   );
 };
