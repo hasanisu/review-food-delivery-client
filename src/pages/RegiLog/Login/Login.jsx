@@ -1,8 +1,15 @@
-import React from "react";
-import { Player, Controls } from "@lottiefiles/react-lottie-player";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
 
 const Login = () => {
+const {userLogin, loginWithGoogle}= useContext(AuthContext);
+const navigate = useNavigate();
+const location = useLocation();
+
+const from = location.state?.from?.pathname || '/';
+
+
 
   const handleToLogin = event =>{
     event.preventDefault();
@@ -12,7 +19,26 @@ const Login = () => {
     const password = form.password.value;
 
     console.log('i am trying to login',email, password)
+
+    userLogin(email, password)
+    .then(result => {
+      const user = result.user;
+      console.log(user)
+      navigate(from, { replace: true });
+    })
+    .catch(err => console.error(err))
   }
+
+  const handleToLoginWithGoogle=()=>{
+        loginWithGoogle()
+        .then(result => {
+          const user = result.user;
+          console.log(user)
+        })
+        .catch(err => console.error(err))
+  }
+
+
 
   return (
 
@@ -48,6 +74,7 @@ const Login = () => {
         </p>
         <div className="my-6 space-y-4">
           <button
+            onClick={handleToLoginWithGoogle}
             aria-label="Login with Google"
             type="button"
             className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-400 focus:ring-violet-400"
@@ -94,13 +121,13 @@ const Login = () => {
                 <label for="password" className="text-sm">
                   Password
                 </label>
-                <a
+                <Link
                   rel="noopener noreferrer"
-                  href="#"
+                  to="/resetPassword"
                   className="text-xs hover:underline dark:text-gray-400"
                 >
                   Forgot password?
-                </a>
+                </Link>
               </div>
               <input
                 type="password"

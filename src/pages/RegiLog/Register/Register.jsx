@@ -23,11 +23,12 @@ const Register = () => {
     createUser(email, password)
     .then(result => {
       const user = result.user;
+      handleToUpdateUser(name, photoURL)
       console.log(user)
+      form.reset();
+
     })
     .catch(err => console.error(err))
-
-
 
 
   };
