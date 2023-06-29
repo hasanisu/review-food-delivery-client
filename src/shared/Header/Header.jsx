@@ -55,7 +55,7 @@ const Header = () => {
             </span>
           </Dropdown.Header>
           <Dropdown.Item>
-          <Link to='/admin'>Dashboard</Link>
+          <Link to='/addService'>Add-Services</Link>
           </Dropdown.Item>
           <Dropdown.Divider />
           <Dropdown.Item onClick={handleToLogout}>
@@ -103,8 +103,8 @@ const Header = () => {
                 key={item.id}
                 to={item.href}
                 className={({isActive}) => {
-                   return 'text-xl px-3 py-2 rounded-md text-sm font-medium text-gray-300 no-underline' + 
-                   (isActive ? 'text-gray-300 underline text-red-300' :
+                   return 'text-xl px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:underline' + 
+                   (isActive ? 'text-gray-300 text-red-300' :
                       ' text-blue-300'  
                    )
                 }}
