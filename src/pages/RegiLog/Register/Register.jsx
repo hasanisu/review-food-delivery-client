@@ -55,7 +55,7 @@ const Register = () => {
                     Create an account!
                   </h3>
                 </div>
-                <div className="mt-4 text-base text-gray-700">
+                <div className="mt-4 text-base text-gray-200">
                   <p>Sign up and post your valuable reviews.</p>
                 </div>
               </div>
@@ -72,7 +72,7 @@ const Register = () => {
                   type="text"
                   name="name"
                   className="block w-full px-5 py-3 text-base-300 text-neutral-600 placeholder-gray-500 sition durattranion-500 ease-in-out border border-transparent rounded-lg bg-cyan-100 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300"
-                  placeholder="your  name"
+                  placeholder="user name"
                 />
               </div>
               <div>
@@ -120,7 +120,7 @@ const Register = () => {
                   className="inline-flex justify-center py-4 text-lg text-gray-200 focus:outline-none"
                 >
                   {" "}
-                  Have an account!!{" "}
+                  already have an account?{" "}
                   <span className="text-md underline text-red-200 hover:text-red-600 ml-1">
                     <Link to="/login">sign in</Link>
                   </span>{" "}

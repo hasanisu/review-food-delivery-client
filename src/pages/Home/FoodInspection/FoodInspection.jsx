@@ -21,10 +21,9 @@ const FoodInspection = () => {
                          soil, people, and animals can stick on ingredients, utensils, equipment, and hands. You can transfer 
                          them from one surface to the other, even with the smallest contact.</p>
 							<div className="flex items-center mt-4 space-x-4">
-								<img src="https://source.unsplash.com/50x50/?portrait?1" alt="" className="w-12 h-12 bg-center bg-cover rounded-full dark:bg-gray-500" />
 								<div>
 									<p className="text-lg font-semibold">Cleanliness and Hygiene</p>
-									<p className="text-sm dark:text-gray-400">CTO of Company Co.</p>
+									<p className="text-sm dark:text-gray-400">Food & Safty Department</p>
 								</div>
 							</div>
 						</div>
@@ -33,10 +32,9 @@ const FoodInspection = () => {
                          separate them from cooked ingredients, dangerous microorganisms can find their way to food 
                          and make everyone sick. This is known as “cross-contamination.</p>
 							<div className="flex items-center mt-4 space-x-4">
-								<img src="https://source.unsplash.com/50x50/?portrait?2" alt="" className="w-12 h-12 bg-center bg-cover rounded-full dark:bg-gray-500" />
 								<div>
 									<p className="text-lg font-semibold">Separation between Raw and Cooked Ingredients</p>
-									<p className="text-sm dark:text-gray-400">CTO of Company Co.</p>
+									<p className="text-sm dark:text-gray-400">Food & Safty Department</p>
 								</div>
 							</div>
 						</div>
@@ -47,10 +45,10 @@ const FoodInspection = () => {
                          can eliminate most of the dangerous microorganisms. 
                          This applies to ingredients like poultry and meat, especially the ones cooked in large pieces.</p>
 							<div className="flex items-center mt-4 space-x-4">
-								<img src="https://source.unsplash.com/50x50/?portrait?3" alt="" className="w-12 h-12 bg-center bg-cover rounded-full dark:bg-gray-500" />
+								
 								<div>
 									<p className="text-lg font-semibold">Thorough Cooking</p>
-									<p className="text-sm dark:text-gray-400">CTO of Company Co.</p>
+									<p className="text-sm dark:text-gray-400">Food & Safty Department</p>
 								</div>
 							</div>
 						</div>
@@ -60,10 +58,10 @@ const FoodInspection = () => {
                          When storing various food items in containers, label them with the food names 
                          and the dates of storing them. They will help you in managing safe food storage.</p>
 							<div className="flex items-center mt-4 space-x-4">
-								<img src="https://source.unsplash.com/50x50/?portrait?4" alt="" className="w-12 h-12 bg-center bg-cover rounded-full dark:bg-gray-500" />
+								
 								<div>
 									<p className="text-lg font-semibold">Keeping Food at Safe Temperatures</p>
-									<p className="text-sm dark:text-gray-400">CTO of Company Co.</p>
+									<p className="text-sm dark:text-gray-400">Food & Safty Department</p>
 								</div>
 							</div>
 						</div>
@@ -72,10 +70,10 @@ const FoodInspection = () => {
                          Water, ice cubes, and raw ingredients can contain toxic chemicals and microorganisms. 
                          You must conduct proper food preparation to avoid getting sick or causing sickness.</p>
 							<div className="flex items-center mt-4 space-x-4">
-								<img src="https://source.unsplash.com/50x50/?portrait?4" alt="" className="w-12 h-12 bg-center bg-cover rounded-full dark:bg-gray-500" />
+								
 								<div>
 									<p className="text-lg font-semibold">Using Raw Ingredients and Water Safely</p>
-									<p className="text-sm dark:text-gray-400">CTO of Company Co.</p>
+									<p className="text-sm dark:text-gray-400">Food & Safty Department</p>
 								</div>
 							</div>
 						</div>
