@@ -11,6 +11,7 @@ import ForgerPassword from "../pages/RegiLog/ForgetPassword/ForgerPassword";
 import Login from "../pages/RegiLog/Login/Login";
 import Register from "../pages/RegiLog/Register/Register";
 import PrivateRoutes from "./PrivateRoutes";
+import SingleServiceItem from "../pages/Home/Services/SingleServiceItem";
 
 export const router = createBrowserRouter([
     {
@@ -45,6 +46,12 @@ export const router = createBrowserRouter([
             {
                 path: '/allServices',
                 element:<AllServices></AllServices>
+            },
+            {
+                path: '/singleServiceItem/:id',
+                element: <SingleServiceItem></SingleServiceItem>,
+                loader: ({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+                
             },
             {
                 path: '/blogs',

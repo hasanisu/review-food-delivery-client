@@ -1,9 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useReducer, useState } from 'react';
 import { Button, Label, TextInput, Textarea } from 'flowbite-react';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const AddServices = () => {
     const {user} = useContext(AuthContext);
+    const [services, setServices] = useState([]);
 
     const addToService = event=>{
         event.preventDefault();
@@ -13,7 +14,31 @@ const AddServices = () => {
         const rating = form.rating.value;
         const serviceDetails = form.serviceDetails.value;
 
-        console.log(serviceName, photoURL, rating, serviceDetails)
+        const serviceCollection = {
+            serviceName, 
+            photoURL, 
+            rating, 
+            serviceDetails, 
+            userEmail: user?.email,
+            
+        }
+            
+
+        fetch(`http://localhost:5000/services`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(serviceCollection)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if(data.success){
+                alert(data.message)
+                form.reset();
+            }
+        })
         
     }
 
