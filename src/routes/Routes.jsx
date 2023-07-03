@@ -12,6 +12,7 @@ import Login from "../pages/RegiLog/Login/Login";
 import Register from "../pages/RegiLog/Register/Register";
 import PrivateRoutes from "./PrivateRoutes";
 import SingleServiceItem from "../pages/Home/Services/SingleServiceItem";
+import CustomerReview from "../pages/Home/Services/CustomerReview";
 
 export const router = createBrowserRouter([
     {

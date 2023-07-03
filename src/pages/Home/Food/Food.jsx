@@ -77,7 +77,7 @@ const Food = () => {
               </button>
             </div>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col">cd ..
             <img className="w-64 rounded-lg mt-2" src="https://i.ibb.co/t2T29T2/ramen.jpg" alt="" />
             <button type="button" className="py-4 my-1 font-semibold rounded-md dark:text-gray-900 dark:bg-violet-400">Leave feedback</button>
           </div>
