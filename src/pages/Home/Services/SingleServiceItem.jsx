@@ -11,7 +11,6 @@ const SingleServiceItem = () => {
     const singleService = serviceItem.data;
     const {photoURL, serviceName, rating, serviceDetails, _id} = singleService;
 
-    
     const addToReview = event=>{
         event.preventDefault();
         const form = event.target;
@@ -19,7 +18,7 @@ const SingleServiceItem = () => {
         const review = form.review.value;
 
         const reviewsCollection = {
-            service:_id,
+            service_id:_id,
             customerName:user?.displayName, 
             userEmail: user?.email,
             userPhoto: user?.photoURL,
@@ -48,12 +47,15 @@ const SingleServiceItem = () => {
     }
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/reviews?id=${_id}`)
+        fetch(`http://localhost:5000/reviews/${_id}`)
         .then(res => res.json())
         .then(data => {
             console.log(data.data)
-            setReviews(data.data)})
+            setReviews(data.data)
+        
+        })
     },[_id])
+  
     
     return (
         <div  className=' w-9/12 mx-auto'>
@@ -67,14 +69,14 @@ const SingleServiceItem = () => {
                 <h2 className='text-xl font-bold px-10 mb-5 mt-5'>{serviceName}</h2>
                 <p className='px-10 mb-5 mt-5'>{serviceDetails}</p>
                 <h4 className='px-10 mb-5 mt-5'>Rating: <span className='font-bold'>{rating}</span></h4>
-                {/* <div>
+                <div>
                     {
-                        reviews.map(review => <CustomerReview
+                        reviews?.map(review => <CustomerReview
                         key={review._id}
                         review={review}
                         ></CustomerReview>)
                     }
-                </div> */}
+                </div>
             </div>
 
             <div className='col-span-3 bg-slate-500 '>

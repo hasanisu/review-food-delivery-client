@@ -14,6 +14,8 @@ const AddServices = () => {
         const rating = form.rating.value;
         const serviceDetails = form.serviceDetails.value;
 
+        
+
         const serviceCollection = {
             serviceName, 
             photoURL, 
