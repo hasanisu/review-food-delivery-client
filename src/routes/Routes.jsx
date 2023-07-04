@@ -13,6 +13,7 @@ import Register from "../pages/RegiLog/Register/Register";
 import PrivateRoutes from "./PrivateRoutes";
 import SingleServiceItem from "../pages/Home/Services/SingleServiceItem";
 import CustomerReview from "../pages/Home/Services/CustomerReview";
+import EditReviews from "../pages/MyReviews/EditReviews";
 
 export const router = createBrowserRouter([
     {
@@ -50,15 +51,15 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/singleServiceItem/:id',
-                element: <PrivateRoutes><SingleServiceItem></SingleServiceItem></PrivateRoutes>,
+                element: <SingleServiceItem></SingleServiceItem>,
                 loader: ({params})=>fetch(`http://localhost:5000/services/${params.id}`)
                 
             },
-            // {
-            //     path:'/customerReviews/:id',
-            //     element:<CustomerReview></CustomerReview>,
-            //     loader:({params})=> fetch(`http://localhost:5000/reviews/${params.id}`)
-            // },
+            {
+                path: '/editReviews/:id',
+                element: <EditReviews></EditReviews>,
+                loader: ({params})=> fetch(`http://localhost:5000/reviewsId/${params.id}`)
+            },
             {
                 path: '/blogs',
                 element: <Blogs></Blogs>

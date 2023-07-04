@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { Button, Label, TextInput, Textarea } from 'flowbite-react';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 import CustomerReview from './CustomerReview';
@@ -118,9 +118,20 @@ const SingleServiceItem = () => {
                     </div>
                     <Textarea id="comment" name='review' placeholder="Comments..." required rows={4} />
                 </div>
-                <Button type="submit" className='basic'>
-                    Add Service
+               <div className='mx-auto'>
+               {
+                user?.uid ?
+                <Button  type="submit" className='basic'>
+                    Post Review
                 </Button>
+                :
+                <Link to='/login'>
+                <Button  type="submit" className='basic'>
+                    Post Review
+                </Button>
+                </Link>
+               }
+               </div>
             </form>
             </div>
 

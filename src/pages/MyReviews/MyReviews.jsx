@@ -1,9 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import { Link } from 'react-router-dom';
 
 const MyReviews = () => {
     const {user} = useContext(AuthContext);
-    const [cutomerReview, setCustomerReview] = useState([]);
+    const [customerReview, setCustomerReview] = useState([]);
+    
+
     useEffect(()=>{
         fetch(`http://localhost:5000/reviews?email=${user?.email}`)
         .then(res => res.json())
@@ -44,7 +47,7 @@ const MyReviews = () => {
         </thead>
         <tbody>
             {
-                cutomerReview.map(ownReview => 
+                customerReview.map(ownReview => 
                     
                     <tr key={ownReview._id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <td className="w-4 p-4">
@@ -67,7 +70,7 @@ const MyReviews = () => {
                     {ownReview.rating}
                 </td>
                 <td className="px-6 py-4">
-                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                    <Link to={`/editReviews/${ownReview._id}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</Link>
                 </td>
             </tr>
                     
