@@ -10,6 +10,7 @@ const SingleServiceItem = () => {
     const serviceItem = useLoaderData();
     const singleService = serviceItem.data;
     const {photoURL, serviceName, rating, serviceDetails, _id} = singleService;
+    console.log(singleService)
 
     const addToReview = event=>{
         event.preventDefault();
@@ -19,6 +20,8 @@ const SingleServiceItem = () => {
 
         const reviewsCollection = {
             service_id:_id,
+            serviceName,
+            img:photoURL,
             customerName:user?.displayName, 
             userEmail: user?.email,
             userPhoto: user?.photoURL,
@@ -38,10 +41,7 @@ const SingleServiceItem = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data)
-            if(data.success){
-                // alert(data.message)
-                form.reset();
-            }
+            form.reset();
         })
         
     }
@@ -50,8 +50,12 @@ const SingleServiceItem = () => {
         fetch(`http://localhost:5000/reviews/${_id}`)
         .then(res => res.json())
         .then(data => {
-            console.log(data.data)
-            setReviews(data.data)
+            if(data.success){
+                const datas = data.data;
+                const customerReviews = datas.filter(n => n.service_id === _id)
+                setReviews(customerReviews)
+            }
+            
         
         })
     },[_id])
@@ -64,16 +68,20 @@ const SingleServiceItem = () => {
             
             
             <div className=' col-span-9 mt-20'>
-            <h2 className='text-2xl font-serif font-bold text-center mb-10'>A particular service details review page {reviews?.length}</h2>
+            <h2 className='text-2xl font-serif font-bold text-center mb-10'>A particular service details review page</h2>
                 <img src={photoURL} alt="" className='w-86 mx-auto rounded-2xl basic-border'/>
                 <h2 className='text-xl font-bold px-10 mb-5 mt-5'>{serviceName}</h2>
                 <p className='px-10 mb-5 mt-5'>{serviceDetails}</p>
-                <h4 className='px-10 mb-5 mt-5'>Rating: <span className='font-bold'>{rating}</span></h4>
+                <h4 className='px-10 mb-5 mt-5'>Overall Rating: <span className='font-bold'>{rating}</span></h4>
+                <hr className="w-full dark:text-gray-400" />
+                
+
                 <div>
+                    <p className='text-xl font-serif px-10 mb-5 mt-5'>Total number of reviews - {reviews.length}</p>
                     {
-                        reviews?.map(review => <CustomerReview
-                        key={review._id}
-                        review={review}
+                        reviews?.map(userReview => <CustomerReview
+                        key={userReview._id}
+                        userReview={userReview}
                         ></CustomerReview>)
                     }
                 </div>
