@@ -56,9 +56,15 @@ export const router = createBrowserRouter([
                 
             },
             {
+                path:'/serviceReviews/:id',
+                element: <CustomerReview></CustomerReview>,
+                loader: ({params})=> fetch(`http://localhost:5000/reviews/${params.id}`)
+            },
+        
+            {
                 path: '/editReviews/:id',
                 element: <EditReviews></EditReviews>,
-                loader: ({params})=> fetch(`http://localhost:5000/reviewsId/${params.id}`)
+                loader: ({params})=> fetch(`http://localhost:5000/reviewsid/${params.id}`)
             },
             {
                 path: '/blogs',

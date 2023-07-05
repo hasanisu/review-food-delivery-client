@@ -6,11 +6,10 @@ import CustomerReview from './CustomerReview';
 
 const SingleServiceItem = () => {
     const {user} = useContext(AuthContext);
-    const [reviews, setReviews] = useState([]);
     const serviceItem = useLoaderData();
     const singleService = serviceItem.data;
     const {photoURL, serviceName, rating, serviceDetails, _id} = singleService;
-    console.log(singleService)
+    
 
     const addToReview = event=>{
         event.preventDefault();
@@ -30,6 +29,8 @@ const SingleServiceItem = () => {
            
             
         }
+
+
             
         fetch(`http://localhost:5000/reviews`, {
             method: 'POST',
@@ -46,19 +47,22 @@ const SingleServiceItem = () => {
         
     }
 
-    useEffect(()=>{
-        fetch(`http://localhost:5000/reviews/${_id}`)
-        .then(res => res.json())
-        .then(data => {
-            if(data.success){
-                const datas = data.data;
-                const customerReviews = datas.filter(n => n.service_id === _id)
-                setReviews(customerReviews)
-            }
+
+    // For getting data
+
+    // useEffect(()=>{
+    //     fetch(`http://localhost:5000/reviews/${_id}`)
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         if(data.success){
+    //             const datas = data.data;
+    //             const customerReviews = datas.filter(n => n.service_id === _id)
+    //             setReviews(customerReviews)
+    //         }
             
         
-        })
-    },[_id])
+    //     })
+    // },[_id])
   
     
     return (
@@ -77,13 +81,15 @@ const SingleServiceItem = () => {
                 
 
                 <div>
-                    <p className='text-xl font-serif px-10 mb-5 mt-5'>Total number of reviews - {reviews.length}</p>
-                    {
+                    {/* <p className='text-xl font-serif px-10 mb-5 mt-5'>Total number of reviews - {reviews.length}</p> */}
+                    {/* {
                         reviews?.map(userReview => <CustomerReview
                         key={userReview._id}
                         userReview={userReview}
                         ></CustomerReview>)
-                    }
+                    } */}
+                    
+                    <Link to={`/serviceReviews/${_id}`}>sell all</Link>
                 </div>
             </div>
 
