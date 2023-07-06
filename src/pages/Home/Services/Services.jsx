@@ -4,6 +4,10 @@ import {Link} from 'react-router-dom';
 
 const Services = () => {
     const [services, setServices] = useState([]);
+    const [size, setSize] = useState(5);
+    const [count, serCount] = useState(0);
+    const [page, setPage] = useState(0)
+
 
     useEffect(()=>{
         fetch(`http://localhost:5000/services`)

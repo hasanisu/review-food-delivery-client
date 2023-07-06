@@ -49,43 +49,44 @@ const AddServices = () => {
             <h2 className='text-center text-4xl font-mono mt-10 font-bold'>You Can Add The Sevice Item in The Sevice List</h2>
 
             <div className='w-10/12 mx-auto'>
-            <form onSubmit={addToService} className="flex max-w-md flex-col gap-4 mx-auto bg-slate-500 py-10 px-10 mt-10 mb-12 food-love form-bg shadow-2xl">
+            <form onSubmit={addToService} className="flex max-w-lg flex-col gap-4 mx-auto bg-slate-500 py-10 pl-10 mt-10 mb-12 food-love form-bg shadow-2xl">
                 
-                <div>
+                <div className='content-center'>
                     <div className="mb-2 block">
                         <Label htmlFor="name" value="Service Name" />
                     </div>
-                    <TextInput name="serviceName" placeholder="service name" required shadow type="text" />
+                    <input className='rounded-xl w-11/12 p-2' name="serviceName" placeholder="service name" required shadow type="text" />
                 </div>
 
                 <div>
                     <div className="mb-2 block">
                         <Label  htmlFor="email"  value="Your email"  />
                     </div>
-                    <TextInput name="email" defaultValue={user?.email} placeholder="name@flowbite.com" required shadow type="email" />
+                    <input className='rounded-xl w-11/12 p-2' name="email" defaultValue={user?.email} placeholder="name@flowbite.com" readOnly shadow type="email" />
                 </div>
 
                 <div>
                     <div className="mb-2 block">
                         <Label htmlFor="photoURL" value="Photo URL" />
                     </div>
-                    <TextInput name="photoURL" placeholder="photo url link" required shadow type="photoURL"/>
+                    <input className='rounded-xl w-11/12 p-2' name="photoURL" placeholder="photo url link" required shadow type="photoURL"/>
+                    
                 </div>
 
                 <div>
                     <div className="mb-2 block">
                         <Label  htmlFor="rating"  value="Rating"  />
                     </div>
-                    <TextInput name="rating" placeholder="rating" required shadow type="rating" />
+                    <input className='rounded-xl w-11/12 p-2' name="rating" placeholder="rating" required shadow type="rating" />
                 </div>
                
-                <div className="max-w-md" id="textarea">
+                <div className="max-w-lg" id="textarea">
                     <div className="mb-2 block">
                         <Label htmlFor="comment" value="Your Service Details" />
                     </div>
-                    <Textarea id="comment" name='serviceDetails' placeholder="Service details..." required rows={4} />
+                    <textarea className='rounded-xl w-11/12 p-2' id="comment" name='serviceDetails' placeholder="Service details..." required shadow rows={4} />
                 </div>
-                <Button type="submit" className='basic'>
+                <Button type="submit" className='w-11/12 basic'>
                     Add Service
                 </Button>
             </form>
