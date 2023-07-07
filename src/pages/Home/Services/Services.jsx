@@ -1,25 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import ServiceItem from './ServiceItem';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const Services = () => {
+    const { loading, setLoading } = useContext(AuthContext)
     const [services, setServices] = useState([]);
     const [size, setSize] = useState(5);
     const [count, serCount] = useState(0);
     const [page, setPage] = useState(0)
 
 
-    useEffect(()=>{
+    useEffect(() => {
         fetch(`http://localhost:5000/services`)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            setServices(data.data)
-            if(data.success){
-                
-            }
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setLoading()
+                setServices(data.data)
+              
 
-        })
+            })
     }, [])
     return (
         <div className='bg-sky-200 pt-20 pb-10'>
@@ -30,8 +31,8 @@ const Services = () => {
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>
                     {
                         services.map(service => <ServiceItem
-                        key={service._id}
-                        service={service}
+                            key={service._id}
+                            service={service}
                         ></ServiceItem>)
                     }
                 </div>
@@ -41,7 +42,7 @@ const Services = () => {
                 </Link>
 
             </div>
-            
+
         </div>
     );
 };

@@ -4,7 +4,7 @@ import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const AddServices = () => {
     const {user} = useContext(AuthContext);
-    const [services, setServices] = useState([]);
+    
 
     const addToService = event=>{
         event.preventDefault();
@@ -13,8 +13,6 @@ const AddServices = () => {
         const photoURL = form.photoURL.value;
         const rating = form.rating.value;
         const serviceDetails = form.serviceDetails.value;
-
-        
 
         const serviceCollection = {
             serviceName, 

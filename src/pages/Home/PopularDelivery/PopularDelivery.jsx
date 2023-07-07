@@ -12,7 +12,7 @@ const PopularDelivery = () => {
                     as pleasing to the eye as it is to the palate.</p>
             </div>
 
-            <div className='w-10/12 mx-auto flex flex-row'>
+            <div className='w-10/12 mx-auto flex flex-row justify-between'>
 
             <div className='lg:col-span-3 bg-zinc-400 border border-purple-900 w-72 food-pop hidden lg:block '>
                 <h2 className='text-center mt-10 text-2xl font-serif border m-3 text-purple-900 food-love'>Food Lovers</h2>

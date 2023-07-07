@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Button, Label, TextInput, Textarea } from 'flowbite-react';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import { Link, useLoaderData } from 'react-router-dom';
+import { isContentEditable } from '@testing-library/user-event/dist/utils';
 
 const AddReviews = () => {
     const {user} = useContext(AuthContext);
@@ -39,7 +40,7 @@ const AddReviews = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+            console.log(data.data)
             form.reset();
         })
         
