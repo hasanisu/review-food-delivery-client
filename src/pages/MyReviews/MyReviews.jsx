@@ -3,21 +3,32 @@ import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import { Link } from 'react-router-dom';
 
 const MyReviews = () => {
-    const {user} = useContext(AuthContext);
+    const {user, logoutUser} = useContext(AuthContext);
     const [customerReview, setCustomerReview] = useState([]);
     
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
-        .then(res => res.json())
+        fetch(`http://localhost:5000/reviews?email=${user?.email}`,{
+            headers:{
+                authorization: `Bearer ${localStorage.getItem('service-token')}`
+            }
+        })
+        .then(res => {
+            if(res.status === 401 || res.status === 403 ){
+                logoutUser();
+            }
+            
+            return res.json()})
+
+
         .then(data =>{ 
-            console.log(data.data)
+            console.log('review check',data)
             if(data.success){
                 setCustomerReview(data.data)
             }
         
         })
-    },[user?.email])
+    },[user?.email, logoutUser])
 
     const handleToDelete= _id =>{
         const procced = window.confirm('Are you sure want to delete this reviews')

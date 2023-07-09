@@ -6,9 +6,7 @@ import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 const Services = () => {
     const { loading, setLoading } = useContext(AuthContext)
     const [services, setServices] = useState([]);
-    const [size, setSize] = useState(5);
-    const [count, serCount] = useState(0);
-    const [page, setPage] = useState(0)
+    
 
 
     useEffect(() => {

@@ -3,17 +3,24 @@ import ServiceItem from "./ServiceItem";
 
 const AllServices = () => {
   const [allServices, setAllServices] = useState([]);
+  const [size, setSize] = useState(5);
+    const [count, setCount] = useState(0);
+    const [page, setPage] = useState(0);
+
+    const pages = Math.ceil(count  / size);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/allServices`)
+    fetch(`http://localhost:5000/allServices?page=${page}&size=${size}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        
         setAllServices(data.data);
+        setCount(data.count)
         if (data.success) {
         }
       });
-  }, []);
+  }, [page, size]);
   return (
     <div>
       <div className="w-10/12 mx-auto">
@@ -29,6 +36,25 @@ const AllServices = () => {
           ))}
         </div>
       </div>
+
+      <div className="pagination">
+                <p>Currently page selected:{page} and size {size}</p>
+                {
+                    [...Array(pages).keys()].map(number => <button
+                    key={number}
+                    className={page === number ? 'selected' : ''}
+                    onClick={()=>setPage(number)}
+                    >
+                        {number + 1}
+                    </button>)
+                }
+                
+                <select onChange={e => setSize(e.target.value)}>
+                    <option value="5" selected>5</option>
+                    <option value="10" >10</option>
+                    <option value="15">15</option>
+                </select>
+            </div>
     </div>
   );
 };
