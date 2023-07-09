@@ -63,14 +63,14 @@ const EditReviews = () => {
                     <div className="mb-2 block">
                         <Label  htmlFor="rating"  value="Rating (out of 5)"  />
                     </div>
-                    <input onChange={handleToChange} className='rounded-xl w-11/12 p-2' name="rating" defaultValue={updateReview.data?.rating} placeholder="rating" required shadow type="rating" />
+                    <input onChange={handleToChange} className='rounded-xl w-11/12 p-2' name="rating"  placeholder="rating" required shadow type="rating" />
                 </div>
                
                 <div className="max-w-lg" id="textarea">
                     <div className="mb-2 block">
                         <Label htmlFor="comment" value="Customer Review" />
                     </div>
-                    <textarea onChange={handleToChange} className='rounded-xl w-11/12 p-2' name='review' defaultValue={updateReview.data?.review} placeholder="Comments..." required rows={4} />
+                    <textarea onChange={handleToChange} className='rounded-xl w-11/12 p-2' name='review' placeholder="Comments..." required rows={4} />
                 </div>
                <div className='mx-auto'>
                

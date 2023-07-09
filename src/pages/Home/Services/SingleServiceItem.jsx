@@ -33,7 +33,7 @@ const SingleServiceItem = () => {
     return (
         <div className=' w-9/12 mx-auto'>
 
-            <div className='bg-slate-500 '>
+            <div className='bg-slate-400 '>
 
 
                 <div className=' col-span-9 pt-20 pb-10'>

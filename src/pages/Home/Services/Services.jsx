@@ -16,8 +16,9 @@ const Services = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                setLoading()
+               if(data.success){
                 setServices(data.data)
+               }
               
 
             })
@@ -25,7 +26,7 @@ const Services = () => {
     return (
         <div className='bg-sky-200 pt-20 pb-10'>
             <div className='w-10/12 mx-auto'>
-                <h2 className='text-center text-2xl font-mono'>Food Delivery Services {services.length}</h2>
+                <h2 className='text-center text-2xl font-mono'>Delivery Services</h2>
                 <p className='text-center'>As food delivery person i always try to maintain the below services</p>
 
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>

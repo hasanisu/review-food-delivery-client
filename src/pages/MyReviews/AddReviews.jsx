@@ -72,7 +72,7 @@ const AddReviews = () => {
                     <div className="mb-2 block">
                         <Label  htmlFor="rating"  value="Rating (out of 5)"  />
                     </div>
-                    <input  className='rounded-xl w-11/12 p-2' name="rating" placeholder="rating"  type="rating" />
+                    <input  className='rounded-xl w-11/12 p-2'  name="rating" placeholder="rating"  type="rating" />
                 </div>
                
                 <div className="max-w-md" id="textarea">

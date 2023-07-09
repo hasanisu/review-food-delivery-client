@@ -8,7 +8,7 @@ const CustomerReview = ({userReview}) => {
     const allReviews = reviewsId.data;
 
     return (
-        <div className='bg-slate-500 flex px-10 pb-8 ' >
+        <div className='bg-slate-400 flex px-10 pb-8 ' >
             <div className=''>
                     {
                         userPhoto ?

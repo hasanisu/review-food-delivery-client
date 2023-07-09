@@ -4,6 +4,9 @@ import { Link, NavLink } from 'react-router-dom';
 import './Header.css'
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
+
+
+
 const Header = () => {
   const { user, logoutUser } = useContext(AuthContext);
 
@@ -28,13 +31,12 @@ const Header = () => {
 
       >
         <Navbar.Brand to="/">
-          {/* <img
-          alt="Flowbite React Logo"
-          className="mr-3 h-6 sm:h-9"
-          src="/favicon.svg"
-        /> */}
+          <img
+          alt="logo"
+          className="mr-3 w-20 h-18 "
+          src="https://i.ibb.co/GCCPDRF/lll-1.png"
+        />
           <span className="self-center text-xl font-semibold text-white">
-            Isu`s Delivery Service`
           </span>
         </Navbar.Brand>
         <div className="flex md:order-2">
