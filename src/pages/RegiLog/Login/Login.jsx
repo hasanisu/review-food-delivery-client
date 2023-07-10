@@ -32,7 +32,7 @@ const from = location.state?.from?.pathname || '/';
 
 
       // get JWT Token
-      fetch(`http://localhost:5000/jwt`,{
+      fetch(`https://review-food-delivery-server.vercel.app/jwt`,{
         method:'POST',
         headers: {
           'content-type': 'application/json'

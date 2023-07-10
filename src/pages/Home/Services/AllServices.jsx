@@ -10,7 +10,7 @@ const AllServices = () => {
     const pages = Math.ceil(count  / size);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/allServices?page=${page}&size=${size}`)
+    fetch(`https://review-food-delivery-server.vercel.app/allServices?page=${page}&size=${size}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

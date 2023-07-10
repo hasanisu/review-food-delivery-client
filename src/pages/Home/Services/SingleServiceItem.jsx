@@ -17,7 +17,7 @@ const SingleServiceItem = () => {
     // For getting data
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews/${_id}`)
+        fetch(`https://review-food-delivery-server.vercel.app/reviews/${_id}`)
             .then(res => res.json())
             .then(data => {
                 if (data.success) {

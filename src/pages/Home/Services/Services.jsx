@@ -4,13 +4,12 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const Services = () => {
-    const { loading, setLoading } = useContext(AuthContext)
     const [services, setServices] = useState([]);
     
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/services`)
+        fetch(`https://review-food-delivery-server.vercel.app/services`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -24,8 +23,8 @@ const Services = () => {
     return (
         <div className='bg-sky-200 pt-20 pb-10'>
             <div className='w-10/12 mx-auto'>
-                <h2 className='text-center text-2xl font-mono'>Delivery Services</h2>
-                <p className='text-center'>As food delivery person i always try to maintain the below services</p>
+                <h2 className='text-center text-2xl font-mono'>Some Delivery Services</h2>
+                <p className='text-center pb-20'>Here is my delivery service</p>
 
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>
                     {

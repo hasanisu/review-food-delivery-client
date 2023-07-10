@@ -53,25 +53,25 @@ export const router = createBrowserRouter([
             {
                 path: '/singleServiceItem/:id',
                 element: <SingleServiceItem></SingleServiceItem>,
-                loader: ({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({params})=>fetch(`https://review-food-delivery-server.vercel.app/services/${params.id}`)
                 
             },
             {
                 path:'/serviceReviews/:id',
                 element: <CustomerReview></CustomerReview>,
-                loader: ({params})=> fetch(`http://localhost:5000/reviews/${params.id}`)
+                loader: ({params})=> fetch(`https://review-food-delivery-server.vercel.app/reviews/${params.id}`)
             },
 
             {
                 path: '/addReviews/:id',
                 element: <PrivateRoutes><AddReviews></AddReviews></PrivateRoutes>,
-                loader: ({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({params})=>fetch(`https://review-food-delivery-server.vercel.app/services/${params.id}`)
             },
         
             {
                 path: '/editReviews/:id',
                 element: <EditReviews></EditReviews>,
-                loader: ({params})=> fetch(`http://localhost:5000/reviewsid/${params.id}`)
+                loader: ({params})=> fetch(`https://review-food-delivery-server.vercel.app/reviewsid/${params.id}`)
             },
             {
                 path: '/blogs',

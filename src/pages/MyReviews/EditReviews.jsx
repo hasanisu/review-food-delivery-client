@@ -14,7 +14,7 @@ const EditReviews = () => {
         event.preventDefault();
         console.log(updateReview)
         
-        fetch(`http://localhost:5000/reviews/${userReviews.data._id}`,{
+        fetch(`https://review-food-delivery-server.vercel.app/reviews/${userReviews.data._id}`,{
             method:'PATCH',
             headers:{
                 'content-type': 'application/json'
