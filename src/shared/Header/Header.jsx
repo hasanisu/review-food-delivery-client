@@ -3,6 +3,8 @@ import { Avatar, Dropdown, Navbar } from 'flowbite-react';
 import { Link, NavLink } from 'react-router-dom';
 import './Header.css'
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import { FaUserCircle } from "react-icons/fa";
+
 
 
 
@@ -44,9 +46,10 @@ const Header = () => {
           {
             user?.uid ?
 
-              <Dropdown
-                inline
-                label={<Avatar alt="User settings" img={user?.photoURL} rounded className='border rounded-full border-gray-400' />}
+              <Dropdown 
+              inline
+               
+                label={<img src={user?.photoURL} alt="User Setting" className='w-12 h-12 rounded-full border' />}
               >
                 <Dropdown.Header>
                   <span className="block text-sm font-bold font-mono">
@@ -72,10 +75,8 @@ const Header = () => {
               :
               <>
 
-                {/* <FaCircleUser
-           className='w-10 h-10 text-gray-400'/> */}
-
-                <Dropdown inline label={<Avatar rounded />} >
+                <Dropdown inline label={<FaUserCircle
+                          className='w-12 h-12 text-gray-300'/>} >
 
                   <Dropdown.Header>
                     <span className="block text-md font-sans font-bold">
@@ -93,9 +94,6 @@ const Header = () => {
                     <Link to='/register'>Sign Up</Link>
                   </Dropdown.Item>
                   <Dropdown.Divider />
-
-
-
                 </Dropdown>
 
               </>

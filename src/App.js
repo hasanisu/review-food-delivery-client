@@ -10,7 +10,7 @@ function App() {
     AOS.init();
   }, [])
   return (
-    <div className="all-body">
+    <div className="bg-slate-400">
       <RouterProvider router={router}>
 
       </RouterProvider>
