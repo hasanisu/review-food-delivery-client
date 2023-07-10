@@ -19,7 +19,7 @@ const DeliverySteps = () => {
         </div>
         <div className="grid gap-8 row-gap-0 lg:grid-cols-3">
           <div className=" text-center">
-            <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4  sm:w-20 sm:h-20">
+            <div className="flex items-center justify-center w-24 h-24 p-4 rounded-full bg-purple-500  mx-auto mb-4">
               <img src={rec} alt="" />
             </div>
             <h6 className="mb-2 text-2xl font-extrabold">Received from Seller</h6>
@@ -56,7 +56,7 @@ const DeliverySteps = () => {
 
 
           <div className=" text-center">
-            <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4  sm:w-20 sm:h-20">
+            <div className="flex items-center justify-center w-24 h-24 p-4 rounded-full bg-purple-500 mx-auto mb-4">
               <img src={deli} alt="" />
             </div>
             <h6 className="mb-2 text-2xl font-extrabold">Way to Delivery</h6>
@@ -90,7 +90,7 @@ const DeliverySteps = () => {
             </div>
           </div>
           <div className=" text-center">
-            <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4  sm:w-20 sm:h-20">
+            <div className="flex items-center justify-center w-24 h-24 p-4 rounded-full bg-purple-500 mx-auto mb-4">
              <img src={door} alt="" />
             </div>
             <h6 className="mb-2 text-2xl font-extrabold">Delivered to the Customer</h6>

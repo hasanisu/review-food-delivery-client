@@ -35,26 +35,35 @@ const AllServices = () => {
             <ServiceItem key={service._id} service={service}></ServiceItem>
           ))}
         </div>
-      </div>
 
-      <div className="pagination">
-                <p>Currently page selected:{page} and size {size}</p>
+        
+       <div className="flex justify-center">
+       <div className="join bg-slate-500 mb-10 ">
+                {/* <h2>Currently page selected:{page} and size {size}</h2> <br /> */}
                 {
                     [...Array(pages).keys()].map(number => <button
                     key={number}
-                    className={page === number ? 'selected' : ''}
+                    className={page === number ? 'join-item btn btn-square bg-red-200 w-16' : 'w-16'}
                     onClick={()=>setPage(number)}
                     >
                         {number + 1}
                     </button>)
                 }
+
+
                 
-                <select onChange={e => setSize(e.target.value)}>
+                <select className="bg-red-500 w-18" onChange={e => setSize(e.target.value)}>
                     <option value="5" selected>5</option>
                     <option value="10" >10</option>
                     <option value="15">15</option>
                 </select>
             </div>
+       </div>
+        
+
+      </div>
+
+      
     </div>
   );
 };
