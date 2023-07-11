@@ -5,6 +5,7 @@ import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 import CustomerReview from './CustomerReview';
 import AddReviews from '../../MyReviews/AddReviews';
 import { Modal } from 'flowbite';
+import { useTitle } from '../../../hooks/useTitle';
 
 const SingleServiceItem = () => {
     const { user } = useContext(AuthContext);
@@ -12,6 +13,7 @@ const SingleServiceItem = () => {
     const singleService = serviceItem.data;
     const [reviews, setReviews] = useState([]);
     const { photoURL, serviceName, rating, serviceDetails, _id } = singleService;
+    useTitle('ServiceItem')
 
 
     // For getting data

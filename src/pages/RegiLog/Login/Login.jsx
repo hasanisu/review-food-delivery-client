@@ -91,10 +91,10 @@ const Login = () => {
     <div className="grid grid-cols-1 mt-10 mb-10 lg:grid-cols-12 lg:w-7/12 form-bg mx-auto p-10 rounded-lg basic-border shadow-2xl">
 
       <div className="lg:col-span-5 hidden lg:block">
-        <p className="text-center text-lg text-slate-200">
+        <p className="text-center text-lg text-slate-900">
           Don`t have account? <br />
           <Link
-            className="underline text-red-200 hover:text-red-600"
+            className="underline font-semibold text-orange-900 hover:text-purple-800"
             to="/register"
           >
             Register here
@@ -187,7 +187,7 @@ const Login = () => {
           </div>
           <button
             type="submit"
-            className="w-full w-full px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out  basic  rounded-xl hover:bg-gray-500"
+            className="w-full w-full px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out  basic  rounded-xl hover:bg-purple-700"
           >
             Sign in
           </button>

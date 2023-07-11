@@ -28,10 +28,10 @@ const ForgerPassword = () => {
     <div className="grid grid-cols-1 mt-10 mb-10 lg:grid-cols-12 lg:w-7/12 form-bg mx-auto p-10 rounded-lg basic-border shadow-2xl lg:pt-20 lg:mt-20 lg:pb-32 lg:mb-32">
 
       <div className="lg:col-span-5 hidden lg:block">
-        <p className="text-center text-lg text-slate-200">
+        <p className="text-center text-lg text-slate-900">
           Don`t want to reset password? <br />
           <Link
-            className="underline text-red-200 hover:text-red-600"
+            className="underline font-semibold font-serif text-green-600 hover:text-red-800"
             to="/login"
           >
             Back to Login page
@@ -68,7 +68,7 @@ const ForgerPassword = () => {
                 name="email"
                 id="email"
                 placeholder="leroy@jenkins.com"
-                className="block w-full px-5 py-3 text-base text-neutral-600 placeholder-gray-500 transition duration-500 ease-in-out  border border-transparent rounded-lg bg-cyan-100 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300"
+                className="block w-full px-5 py-3 text-base text-neutral-600 placeholder-gray-500 transition duration-500 ease-in-out  border  rounded-lg bg-cyan-100 focus:outline-none  focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300"
 
               />
             </div>
@@ -76,7 +76,7 @@ const ForgerPassword = () => {
           </div>
           <button
             type="submit"
-            className="w-full w-full px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out  basic  rounded-xl hover:bg-gray-500"
+            className="w-full w-full px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out  basic  rounded-xl hover:bg-purple-700"
           >
             Reset Password
           </button>

@@ -137,7 +137,7 @@ const Register = () => {
               <div className="flex flex-col mt-4 lg:space-y-2">
                 <button
                   type="submit"
-                  className="flex items-center justify-center w-full px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out basic  rounded-xl hover:bg-gray-500 "
+                  className="flex items-center justify-center w-full px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out basic  rounded-xl hover:bg-purple-700 "
                 >
                   Register
                 </button>

@@ -32,7 +32,7 @@ const Header = () => {
         className='rounded-none basic '
 
       >
-        <Navbar.Brand to="/">
+        <Link to="/">
           <img
           alt="logo"
           className="mr-3 w-20 h-18 "
@@ -40,7 +40,7 @@ const Header = () => {
         />
           <span className="self-center text-xl font-semibold text-white">
           </span>
-        </Navbar.Brand>
+        </Link>
         <div className="flex md:order-2">
 
           {
