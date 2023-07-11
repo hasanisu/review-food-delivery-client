@@ -70,7 +70,7 @@ export const router = createBrowserRouter([
         
             {
                 path: '/editReviews/:id',
-                element: <EditReviews></EditReviews>,
+                element: <PrivateRoutes><EditReviews></EditReviews></PrivateRoutes>,
                 loader: ({params})=> fetch(`https://review-food-delivery-server.vercel.app/reviewsid/${params.id}`)
             },
             {

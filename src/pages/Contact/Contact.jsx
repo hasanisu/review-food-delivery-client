@@ -1,6 +1,8 @@
 import React from "react";
+import { useTitle } from "../../hooks/useTitle";
 
 const Contact = () => {
+	useTitle('Contact')
   return (
    <div className="mb-20 mt-10 lg:pt-24 lg:pb-24">
     <section className="py-6 text-gray-50">

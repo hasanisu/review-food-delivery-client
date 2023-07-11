@@ -1,48 +1,74 @@
 import React from "react";
-import  {useContext}  from "react";
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, Navigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
+import { useTitle } from '../../../hooks/useTitle.js'
+
 
 
 const Register = () => {
-  const {createUser, updateUserProfile} = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
+  useTitle('Register')
+
+
 
   const handleToRegister = (event) => {
-    
     event.preventDefault();
-
     const form = event.target;
     const name = form.name.value;
     const photoURL = form.photoURL.value;
     const email = form.email.value;
     const password = form.password.value;
 
-    console.log("i am trying to login",name, email, password);
+    console.log("i am trying to login", name, email, password);
 
 
     createUser(email, password)
-    .then(result => {
-      const user = result.user;
-      handleToUpdateUser(name, photoURL)
-      console.log(user)
-      form.reset();
+      .then(result => {
+        const user = result.user;
 
-    })
-    .catch(err => console.error(err))
+        const currentUser = {
+          email: user.email
+        }
 
+        // get JWT Token
+        fetch(`https://review-food-delivery-server.vercel.app/jwt`, {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(currentUser)
+        })
+          .then(res => res.json())
+          .then(data => {
+            console.log(data)
+            localStorage.setItem('service-token', data.token)
+          })
 
+        handleToUpdateUser(name, photoURL)
+        console.log(user)
+        form.reset();
+
+      })
+      .catch(err => console.error(err))
   };
 
-  const handleToUpdateUser =(name, photoURL)=>{
-    const userProfile= {
+
+
+  // Update Profile
+  const handleToUpdateUser = (name, photoURL) => {
+    const userProfile = {
       displayName: name,
       photoURL: photoURL,
     }
     updateUserProfile(userProfile)
-    .then(()=>{})
-    .catch(e => console.error(e))
-    
-  }
+      .then(() => { })
+      .catch(e => console.error(e))
+
+  };
+
+
+
   return (
     <div className="mx-auto lg:py-20 form-bg lg:w-7/12 mt-10 mb-24 p-10 rounded-lg basic-border">
       <div className="justify-center mx-auto text-left align-bottom bg-gray-500 rounded-lg w-9/12">

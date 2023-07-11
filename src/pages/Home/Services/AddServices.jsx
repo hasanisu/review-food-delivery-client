@@ -1,10 +1,11 @@
 import React, { useContext, useReducer, useState } from 'react';
 import { Button, Label, TextInput, Textarea } from 'flowbite-react';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
+import { useTitle } from '../../../hooks/useTitle';
 
 const AddServices = () => {
     const {user} = useContext(AuthContext);
-    
+    useTitle('AddService')
 
     const addToService = event=>{
         event.preventDefault();

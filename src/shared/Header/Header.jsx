@@ -19,9 +19,9 @@ const Header = () => {
   }
 
   const navigation = [
-    { id: '1', name: 'Home', href: '/' },
-    { id: '2', name: 'Blogs', href: '/blogs' },
-    { id: '3', name: 'Contact', href: '/contact' },
+    { id: '1', name: 'Home', Link: '/'  },
+    { id: '2', name: 'Blogs', Link: '/blogs' },
+    { id: '3', name: 'Contact', Link: '/contact' },
   ]
 
   return (
@@ -105,7 +105,7 @@ const Header = () => {
           {
             navigation.map(item => <NavLink
               key={item.id}
-              to={item.href}
+              to={item.Link}
               className={({ isActive }) => {
                 return 'text-xl px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:underline' +
                   (isActive ? 'text-gray-300 text-red-300' :

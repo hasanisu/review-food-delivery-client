@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTitle } from '../../../hooks/useTitle';
 import Advantage from '../Advantage/Advantage';
 import BannerSection from '../BannerSection/BannerSection';
 import DeliverySteps from '../DeliverySteps/DeliverySteps';
@@ -9,6 +10,7 @@ import Services from '../Services/Services';
 
 
 const Home = () => {
+    useTitle('Home')
     return (
         <div className='mx-auto'>
             <BannerSection></BannerSection>

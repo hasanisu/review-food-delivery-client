@@ -1,64 +1,87 @@
 import React, { useContext } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
+import { useTitle } from "../../../hooks/useTitle";
 
 const Login = () => {
-const {userLogin, loginWithGoogle}= useContext(AuthContext);
-const navigate = useNavigate();
-const location = useLocation();
+  const { userLogin, loginWithGoogle } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/';
+  useTitle('Login')
 
-const from = location.state?.from?.pathname || '/';
 
 
-
-  const handleToLogin = event =>{
+  const handleToLogin = event => {
     event.preventDefault();
 
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
 
-    console.log('i am trying to login',email, password)
+    console.log('i am trying to login', email, password)
 
     userLogin(email, password)
-    .then(result => {
-      const user = result.user;
-      
-
-      const currentUser = {
-        email: user.email
-      }
-      console.log(currentUser);
+      .then(result => {
+        const user = result.user;
 
 
-      // get JWT Token
-      fetch(`https://review-food-delivery-server.vercel.app/jwt`,{
-        method:'POST',
-        headers: {
-          'content-type': 'application/json'
-        },
-        body: JSON.stringify(currentUser)
+        const currentUser = {
+          email: user.email
+        }
+        console.log(currentUser);
+
+
+        // get JWT Token
+        fetch(`https://review-food-delivery-server.vercel.app/jwt`, {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(currentUser)
+        })
+          .then(res => res.json())
+          .then(data => {
+            console.log(data)
+            localStorage.setItem('service-token', data.token)
+            navigate(from, { replace: true });
+          })
+
+
+
       })
-      .then(res => res.json())
-      .then(data => {
-        console.log(data)
-        localStorage.setItem('service-token', data.token)
-        navigate(from, { replace: true });
-      })
-
-
-      
-    })
-    .catch(err => console.error(err))
+      .catch(err => console.error(err))
   }
 
-  const handleToLoginWithGoogle=()=>{
-        loginWithGoogle()
-        .then(result => {
-          const user = result.user;
-          console.log(user)
+
+
+  const handleToLoginWithGoogle = () => {
+    loginWithGoogle()
+      .then(result => {
+        const user = result.user;
+        const currentGoogleUser = {
+          email: user.email
+        }
+
+
+        fetch(`https://review-food-delivery-server.vercel.app/jwt`, {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(currentGoogleUser)
         })
-        .catch(err => console.error(err))
+          .then(res => res.json())
+          .then(data => {
+            console.log(data)
+            localStorage.setItem('service-token', data.token)
+            navigate(from, { replace: true });
+          })
+
+
+      })
+
+      .catch(err => console.error(err))
   }
 
 
@@ -66,7 +89,7 @@ const from = location.state?.from?.pathname || '/';
   return (
 
     <div className="grid grid-cols-1 mt-10 mb-10 lg:grid-cols-12 lg:w-7/12 form-bg mx-auto p-10 rounded-lg basic-border shadow-2xl">
-      
+
       <div className="lg:col-span-5 hidden lg:block">
         <p className="text-center text-lg text-slate-200">
           Don`t have account? <br />
@@ -119,7 +142,7 @@ const from = location.state?.from?.pathname || '/';
         </div>
 
 
-    {/* Login form Start */}
+        {/* Login form Start */}
 
         <form
           onSubmit={handleToLogin}
@@ -136,7 +159,7 @@ const from = location.state?.from?.pathname || '/';
                 id="email"
                 placeholder="leroy@jenkins.com"
                 className="block w-full px-5 py-3 text-base text-neutral-600 placeholder-gray-500 transition duration-500 ease-in-out  border border-transparent rounded-lg bg-cyan-100 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300"
-                
+
               />
             </div>
             <div className="space-y-2">
@@ -158,7 +181,7 @@ const from = location.state?.from?.pathname || '/';
                 id="password"
                 placeholder="*****"
                 className="block w-full px-5 py-3 text-base text-neutral-600 placeholder-gray-500 transition duration-500 ease-in-out  border border-transparent rounded-lg bg-cyan-100 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300"
-                
+
               />
             </div>
           </div>

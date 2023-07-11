@@ -2,13 +2,17 @@ import React, { useContext } from 'react';
 import { Button, Label, TextInput, Textarea } from 'flowbite-react';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import { Link, useLoaderData } from 'react-router-dom';
-import { isContentEditable } from '@testing-library/user-event/dist/utils';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useTitle } from '../../hooks/useTitle';
 
 const AddReviews = () => {
     const {user} = useContext(AuthContext);
     const serviceItem = useLoaderData();
     const singleService = serviceItem.data;
     const {photoURL, serviceName, _id} = singleService;
+    const notify = () => toast("Thank you for your Review");
+    useTitle('PostReview')
     
     const addToReview = event=>{
         event.preventDefault();
@@ -72,7 +76,7 @@ const AddReviews = () => {
                     <div className="mb-2 block">
                         <Label  htmlFor="rating"  value="Rating (out of 5)"  />
                     </div>
-                    <input  className='rounded-xl w-11/12 p-2'  name="rating" placeholder="rating"  type="rating" />
+                    <input  className='rounded-xl w-11/12 p-2'  name="rating" placeholder="rating"  type="rating" required/>
                 </div>
                
                 <div className="max-w-md" id="textarea">
@@ -84,7 +88,7 @@ const AddReviews = () => {
                <div className='mx-auto'>
                {
                 user?.uid ?
-                <Button  type="submit" className='basic'>
+                <Button onClick={notify}  type="submit" className='basic'>
                     Post Review
                 </Button>
                 :
@@ -95,6 +99,7 @@ const AddReviews = () => {
                 </Link>
                }
                </div>
+               <ToastContainer />
             </form>
             </div>
         </div>

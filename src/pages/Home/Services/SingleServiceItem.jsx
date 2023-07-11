@@ -71,11 +71,10 @@ const SingleServiceItem = () => {
                                         <p className="py-4">Please login to post your valuable review</p>
                                         <div className="modal-action">
                                             <button className="btn">Close</button>
-                                            <Link to='/login'><button className="btn">Login</button></Link>
+                                            <Link to={`/addReviews/${_id}`}><button className="btn">Login</button></Link>
                                         </div>
                                     </form>
                                 </dialog>
-
                             </>
 
 
